@@ -1,0 +1,7 @@
+*.egg-info
+.dump
+*.so
+build/
+simple_knn
+dist/
+__pycache__/

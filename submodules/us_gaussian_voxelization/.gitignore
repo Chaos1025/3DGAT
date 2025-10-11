@@ -1,0 +1,8 @@
+*.egg-info
+.dump
+*.so
+build/
+dist/
+__pycache__/
+us_gaussian_voxelization
+!us_gaussian_voxelization/__init__.py

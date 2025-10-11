@@ -1,0 +1,9 @@
+# the volume size to be reconstructed
+object_voxel_size:
+- 200
+- 200
+- 200
+# the image size of raw FLFM image
+sensor_field_size:
+- 1600
+- 1600

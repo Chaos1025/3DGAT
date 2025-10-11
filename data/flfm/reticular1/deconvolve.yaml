@@ -1,0 +1,5 @@
+# arguments for rl deconvolution or wiener filtering
+exp_name: reticular1 # experiment name
+psf_name: H.mat # name of the PSF file, only the entire PSF is suitable for deconvolution
+data_name: LFimage.tif # name of the data file, only the entire LF is suitable for deconvolution
+device: 5 # GPU device number to use

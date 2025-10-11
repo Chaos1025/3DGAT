@@ -1,0 +1,4 @@
+exp_name: reticular2
+psf_name: H.mat
+data_name: LFimage.tif
+device: 5
