@@ -200,14 +200,13 @@ class GSystem(LightningModule):
     def train_dataloader(self):
         return DataLoader(
             self.train_dataset,
-            num_workers=4,
-            persistent_workers=True,
+            num_workers=0,
             batch_size=None,
             pin_memory=True,
         )
 
     def val_dataloader(self):
-        return DataLoader(self.test_dataset, num_workers=4, batch_size=None, pin_memory=True)
+        return DataLoader(self.test_dataset, num_workers=0, batch_size=None, pin_memory=True)
 
     def on_train_start(self):
         self.register_buffer("mask", self.train_dataset.circular_mask.to(self.device))
