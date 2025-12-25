@@ -82,7 +82,7 @@ bash scripts/reticular-baseline.sh
 # Citation
 If you find our paper helpful, please cite us
 ```bibtex
-@article{xu20253DGAT,
+@article{xu2025-3dgat,
   title={3D Gaussian adaptive reconstruction for Fourier light-field microscopy},
   author={Xu, Chenyu and Jin, Zhouyu and Shen, Chengkang and Zhu, Hao and Ma, Zhan and Xiong, Bo and Zhou, You and Cao, Xun and Gua, Ning},
   journal={Advanced Imaging},
