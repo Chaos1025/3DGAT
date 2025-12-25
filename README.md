@@ -10,7 +10,10 @@ Chenyu Xu<sup>†</sup>, Zhouyu Jin<sup>†</sup>, Chengkang Shen, Hao Zhu, Zhan
 
 <p>
   <a href="https://www.researching.cn/ArticlePdf/m00132/2025/2/5/055001.pdf">
-    <img src="https://img.shields.io/badge/Paper-PDF-red?style=for-the-badge&logo=Adobe%20Acrobat%20Reader&logoColor=white" alt="Paper PDF">
+    <img src="https://img.shields.io/badge/Paper-PDF-blue?style=for-the-badge&logo=Adobe%20Acrobat%20Reader&logoColor=white" alt="Paper PDF">
+  </a>
+  <a href="https://arxiv.org/pdf/2505.12875">
+    <img src="https://img.shields.io/badge/Arxiv-PDF-red?style=for-the-badge&logo=arxiv&logoColor=white" alt="Arxiv PDF">
   </a>
   <a href="https://github.com/Chaos1025/3DGAT">
     <img src="https://img.shields.io/badge/Code-GitHub-balck?style=for-the-badge&logo=github&logoColor=white" alt="Code Repository">
@@ -19,7 +22,7 @@ Chenyu Xu<sup>†</sup>, Zhouyu Jin<sup>†</sup>, Chengkang Shen, Hao Zhu, Zhan
 
 </div>
 
-Code repository of [3D Gaussian Adaptive Reconstruction for Fourier Light-Field Microscopy](https://arxiv.org/abs/2505.12875).
+Code repository of [3D Gaussian Adaptive Reconstruction for Fourier Light-Field Microscopy](https://www.researching.cn/articles/OJ652a82f30d22719a/html).
 
 # System Requirements
 - Ubuntu 22.4
@@ -79,7 +82,7 @@ bash scripts/reticular-baseline.sh
 # Citation
 If you find our paper helpful, please cite us
 ```bibtex
-@article{xu20253d,
+@article{xu20253DGAT,
   title={3D Gaussian adaptive reconstruction for Fourier light-field microscopy},
   author={Xu, Chenyu and Jin, Zhouyu and Shen, Chengkang and Zhu, Hao and Ma, Zhan and Xiong, Bo and Zhou, You and Cao, Xun and Gua, Ning},
   journal={Advanced Imaging},
