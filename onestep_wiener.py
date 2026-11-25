@@ -45,12 +45,20 @@ if __name__ == "__main__":
     p = psf_sparse.shape[-1]
     M, N = hparams.sensor_field_size
     sample_r = torch.zeros([p, M, N])
+    H_sum = torch.zeros([1, M, N], device=device)
     for layer in range(p):
         psf_layer = psf_sparse[0, 0, layer].todense()
         psf_layer = psf_layer[(m - M) // 2 : (m - M) // 2 + M, (n - N) // 2 : (n - N) // 2 + N]
         psf_tensor = torch.tensor(psf_layer, device=device).unsqueeze(0)
         H_hat = fftshift(fftn(ifftshift(psf_tensor, dim=(1, 2)), dim=(1, 2)), dim=(1, 2))
-        I_r = (I_hat * torch.conj(H_hat)) / (torch.abs(H_hat) ** 2 + noise_power)
+        H_sum += torch.abs(H_hat) ** 2
+    
+    for layer in range(p):
+        psf_layer = psf_sparse[0, 0, layer].todense()
+        psf_layer = psf_layer[(m - M) // 2 : (m - M) // 2 + M, (n - N) // 2 : (n - N) // 2 + N]
+        psf_tensor = torch.tensor(psf_layer, device=device).unsqueeze(0)
+        H_hat = fftshift(fftn(ifftshift(psf_tensor, dim=(1, 2)), dim=(1, 2)), dim=(1, 2))
+        I_r = (I_hat * torch.conj(H_hat)) / (H_sum + noise_power)
         sample_r[layer] = fftshift(ifftn(ifftshift(I_r, dim=(1, 2)), dim=(1, 2)), dim=(1, 2)).abs()
 
     sample_recon = sample_r.cpu().numpy()
