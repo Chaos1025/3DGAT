@@ -1,5 +1,3 @@
-CUDA_LAUNCH_BLOCKING=1 \
-CUDA_VISIBLE_DEVICES=3 \
 python 3DGAT.py \
 --root_dir './data/flfm/reticular1' \
 --exp_name './GS/reticular1' \
