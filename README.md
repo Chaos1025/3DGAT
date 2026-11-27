@@ -36,6 +36,47 @@ pip install -e submodules/us_gaussian_voxelization
 pip install -e submodules/simple-knn
 ```
 
+### Windows
+
+`environment.yml` is Linux-only (it pins `ld_impl_linux-64`, `_libgcc_mutex`, etc.,
+which conda cannot solve on Windows). Use the provided setup script instead — it
+creates the conda env, installs PyTorch 2.1.1 (cu121) and the pinned dependencies,
+then builds both CUDA extensions with MSVC + nvcc and verifies the result.
+
+Prerequisites:
+
+- [Miniconda](https://docs.conda.io/en/latest/miniconda.html) / Anaconda (`conda` on `PATH`)
+- NVIDIA driver with a CUDA 12.x capable GPU (validated on an RTX 3060 / sm_86)
+- [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit-archive) 12.x (provides `nvcc`)
+- [Visual Studio 2022](https://visualstudio.microsoft.com/) with the
+  **"Desktop development with C++"** workload (provides `vcvars64.bat`)
+
+Then run one of:
+
+```bat
+:: cmd.exe / double-click friendly
+scripts\setup_windows.bat
+```
+
+```powershell
+# PowerShell 7+
+pwsh -File scripts\setup_windows.ps1
+
+# custom env name / explicit CUDA path / rebuild an existing env
+pwsh -File scripts\setup_windows.ps1 -EnvName 3dgat -CudaHome 'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6' -Recreate
+```
+
+After it finishes:
+
+```bat
+conda activate 3dgat
+python onestep_wiener.py --root_dir data/flfm/reticular1
+```
+
+> Note: the conda environment must be activated in a shell where the CUDA/MSVC
+> toolchain is used only for building. Once the extensions are built, running the
+> pipeline needs just `conda activate 3dgat`.
+
 # Data Preparation
 We provide the reticular data displayed in our main text (Fig. 2d) and supplementary material (Fig. S5) as examples. They are located in `data/flfm/reticular1` (Fig. 2d) and `data/flfm/reticular2` (Fig. S5) so you can test them easily.
 
