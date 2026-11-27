@@ -160,7 +160,7 @@ if __name__ == "__main__":
     hparams.exp_name = os.path.join("RL", hparams.exp_name)
 
     print("RL deconvolution starting!!!")
-    hparams.device = 4
+    hparams.device = 0
     device = torch.device(
         "cuda:" + str(hparams.device)
         if torch.cuda.is_available() and hparams.device != "cpu"
