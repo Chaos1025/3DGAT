@@ -2,6 +2,8 @@
 .dump
 *.so
 build/
-simple_knn
+simple_knn/*
+!simple_knn/__init__.py
 dist/
+*.pyd
 __pycache__/

@@ -1,0 +1,27 @@
+# Windows-only top-level Python dependencies for 3DGAT.
+# Versions are pinned to a combination validated on Windows 11 + RTX 3060 (sm_86).
+#
+# NOTE: torch / torchvision / torchaudio are installed separately from the
+# PyTorch CUDA wheel index (cu121) by scripts/setup_windows.ps1, so they are
+# intentionally NOT listed here.
+#
+# Usage (inside the activated conda env):
+#   pip install -r requirements-windows.txt
+
+numpy==1.24.0
+scipy==1.13.1
+scikit-image==0.24.0
+tifffile==2023.4.12
+pandas==2.2.3
+matplotlib==3.9.2
+PyYAML==6.0.2
+plyfile==1.1
+lpips==0.1.4
+pytorch-lightning==2.4.0
+tensorboard==2.19.0
+torchmetrics==1.6.1
+tqdm==4.67.1
+einops==0.8.0
+kornia==0.6.5
+imageio==2.36.1
+nvitop==1.4.0
